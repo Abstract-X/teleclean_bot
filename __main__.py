@@ -19,10 +19,10 @@ cleaner = Cleaner(config.TELEGRAM_APP_SESSION_NAME, config.TELEGRAM_APP_ID,
 async def on_startup(_):
     """ Executed before the bot starts. """
 
-    cleaner.connect()
+    await cleaner.connect()
     user_id = await cleaner.load_user_id()
 
-    middlewares.setup(dispatcher, bot)
+    middlewares.setup(dispatcher, bot, cleaner)
     handlers.register_all(dispatcher, user_id, cleaner)
 
 
