@@ -13,3 +13,10 @@ from aiogram.utils.markdown import (
 
 HELLO_MESSAGE = """👋🏼 TeleClean Bot welcomes you!"""
 REQUEST_CHAT_MESSAGE = f"""🆔 Send me {code('chat_id')} or {code('chat_name')} for cleaning."""
+INCORRECT_CHAT_MESSAGE = f"""♻️ I can't find a chat with this name and ID, please check the data and try again."""
+CLEANING_STARTED_MESSAGE = f"""🧹 Cleaning started!"""
+CLEANING_FINISH_MESSAGE = f"""✅ {b('Cleaning completed!')}
+
+{b('Chat name:')} {'{chat_name}'}
+{b('Chat ID:')}   {'{chat_id}'}
+{b('Deleted:')}   {'{deleted_amount}'}"""
