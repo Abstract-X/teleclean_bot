@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import ParseMode
 
-from app import config
+from app import config, middlewares
 
 
 # instances
@@ -16,7 +16,7 @@ dispatcher = Dispatcher(bot=bot, storage=MemoryStorage(), loop=loop)
 async def on_startup(_):
     """ Executed before the bot starts. """
 
-    ...
+    middlewares.setup(dispatcher, bot)
 
 
 async def on_shutdown(_):
