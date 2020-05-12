@@ -18,5 +18,5 @@ CLEANING_STARTED_MESSAGE = f"""🧹 Cleaning started!"""
 CLEANING_FINISH_MESSAGE = f"""✅ {b('Cleaning completed!')}
 
 {b('Chat name:')} {'{chat_name}'}
-{b('Chat ID:')}   {'{chat_id}'}
-{b('Deleted:')}   {'{deleted_amount}'}"""
+{b('Chat ID:')} {'{chat_id}'}
+{b('Deleted:')} {'{deleted_amount}'}"""
