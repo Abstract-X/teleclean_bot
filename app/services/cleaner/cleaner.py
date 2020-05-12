@@ -21,10 +21,11 @@ class Cleaner:
         self._client = TelegramClient(session_name, app_id, app_hash, loop=loop)
         self.user_id: Optional[int] = None
 
-    def connect(self):
+    async def connect(self):
         """ Start the TelegramClient (connects and logs in if necessary). """
 
-        self._client.start()
+        # noinspection PyUnresolvedReferences
+        await self._client.start()
 
     async def disconnect(self):
         """ Disconnect from Telegram. """
@@ -35,7 +36,7 @@ class Cleaner:
         """ Loading Telegram user ID. """
 
         me = await self._client.get_me()
-        self.user_id = me.user_id
+        self.user_id = me.id
 
         return self.user_id
 
