@@ -20,3 +20,9 @@ async def handle_incorrect_chat_message(update: Message, bot: Bot):
     """ Processing sent incorrect chat data. """
 
     await execute_incorrect_chat(update, bot)
+
+
+async def handle_start_command(update: Message, bot: Bot, fsm_context: FSMContext):
+    """ Processing start command. """
+
+    await execute_request_chat(update, bot, fsm_context)

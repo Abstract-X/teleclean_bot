@@ -25,6 +25,12 @@ def register_request_chat_state_handlers(dispatcher: Dispatcher, cleaner: Cleane
     state = FSMState.REQUEST_CHAT
 
     dispatcher.register_message_handler(
+        request_chat_state.handle_start_command,
+        commands=["start"],
+        state=state
+    )
+
+    dispatcher.register_message_handler(
         request_chat_state.handle_chat_message,
         CorrectChatFilter(cleaner),
         state=state
