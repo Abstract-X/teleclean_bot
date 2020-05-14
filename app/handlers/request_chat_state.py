@@ -6,7 +6,7 @@ from app.executors import execute_chat_cleaning, execute_request_chat, execute_i
 from app.services import Cleaner
 
 
-async def handle_chat_message(update: Message, bot: Bot, fsm_context: FSMContext, cleaner: Cleaner):
+async def handle_chat_message(update: Message, bot: Bot, cleaner: Cleaner):
     """ Processing sent chat data. """
 
     await execute_chat_cleaning(update, bot, cleaner)
