@@ -54,7 +54,7 @@ async def execute_chat_cleaning(update: Message, bot: Bot, cleaner: Cleaner):
 
     await bot.send_message(
         chat_id=update.from_user.id,
-        text=resources.text.CLEANING_FINISH_MESSAGE.format(
+        text=resources.text.CLEANING_FINISHED_MESSAGE.format(
             chat_name=report.chat_name,
             chat_id=report.chat_id,
             deleted_amount=report.amount_messages
